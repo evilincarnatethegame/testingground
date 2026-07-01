@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AquaLife.net &mdash; Live Life Fresh</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", "Trebuchet MS", Verdana, sans-serif;
+    background: linear-gradient(180deg, #bfe9ff 0%, #eaf8ff 35%, #ffffff 55%, #d6f3ff 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    color: #1a4d66;
+  }
+
+  /* floating cloud blobs */
+  .cloud {
+    position: absolute;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #eaf7ff 70%);
+    border-radius: 50%;
+    filter: blur(1px);
+    opacity: 0.85;
+  }
+  .c1 { width: 220px; height: 90px; top: 40px; left: 5%; }
+  .c2 { width: 160px; height: 70px; top: 90px; right: 8%; }
+  .c3 { width: 300px; height: 110px; top: 20px; left: 40%; opacity:0.6;}
+
+  header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  h1.logo {
+    font-size: 52px;
+    font-weight: bold;
+    background: linear-gradient(180deg, #ffffff 0%, #7fd4ff 40%, #0a8fd6 60%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 4px rgba(0,80,140,0.3);
+    margin: 0;
+    letter-spacing: 1px;
+  }
+  .tagline { color: #2f7ea6; font-style: italic; margin-top: -6px; }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  .navbtn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 30px;
+    background: linear-gradient(180deg, #eafcff 0%, #8fe0ff 45%, #29a8e0 55%, #0d78b5 100%);
+    box-shadow: 0 4px 10px rgba(0,60,100,0.3), inset 0 1px 2px rgba(255,255,255,0.8);
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0,40,70,0.5);
+    border: 1px solid rgba(255,255,255,0.6);
+    position: relative;
+    overflow: hidden;
+  }
+  .navbtn::before {
+    content: "";
+    position: absolute;
+    top: 2px; left: 8%;
+    width: 84%; height: 40%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0));
+    border-radius: 50% 50% 40% 40%;
+  }
+  .navbtn:hover { filter: brightness(1.1); }
+
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .panel {
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 22px;
+    padding: 26px 30px;
+    margin-bottom: 26px;
+    box-shadow: 0 8px 24px rgba(0,80,130,0.15), inset 0 1px 0 rgba(255,255,255,0.9);
+    backdrop-filter: blur(3px);
+  }
+  .panel h2 {
+    margin-top: 0;
+    color: #0d5f8a;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  .droplet-list { list-style: none; padding: 0; }
+  .droplet-list li {
+    padding: 10px 16px;
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, #f2fcff, #cdeffd);
+    border-radius: 14px;
+    border: 1px solid #a8dcf2;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+  .droplet-list a { color: #0a6ea3; text-decoration: none; font-weight: bold; }
+  .droplet-list a:hover { text-decoration: underline; }
+
+  .widget-row { display: flex; gap: 18px; flex-wrap: wrap; }
+  .widget {
+    flex: 1;
+    min-width: 200px;
+    background: linear-gradient(180deg, #ffffff, #dff6ff);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,80,130,0.15);
+    border: 1px solid #b9e6f7;
+  }
+  .widget .big { font-size: 28px; font-weight: bold; color: #0b83bd; }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    color: #4a8fb0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .glass-badge {
+    display: inline-block;
+    background: linear-gradient(180deg, #ffffff, #a9e4ff);
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 11px;
+    color: #06527a;
+    border: 1px solid #bfe8fb;
+    margin: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+<div class="cloud c3"></div>
+
+<header>
+  <h1 class="logo">AquaLife.net</h1>
+  <p class="tagline">breathe in. log on. live fresh.</p>
+</header>
+
+<nav>
+  <a class="navbtn" href="#">Home</a>
+  <a class="navbtn" href="#">Widgets</a>
+  <a class="navbtn" href="#">Downloads</a>
+  <a class="navbtn" href="https://nefais.github.io/stuffandtest/cyberzone.html">CyberZone 2000</a>
+  <a class="navbtn" href="https://nefais.github.io/stuffandtest/retro90s.html">Old Web Portal</a>
+  <a class="navbtn" href="https://nefais.github.io/stuffandtest/forum.html">LizardNet Forums</a>
+  <a class="navbtn" href="https://nefais.github.io/stuffandtest/top100.html">Top 100 Sites</a>
+</nav>
+
+<main>
+
+  <div class="panel">
+    <h2>Welcome to AquaLife</h2>
+    <p>Your one-stop portal for widgets, wallpapers, and web 2.0 goodness. Optimized for 1280x800 widescreen and Windows Vista Aero glass.</p>
+    <div class="widget-row">
+      <div class="widget"><div class="big">72&deg;F</div>Partly Cloudy &mdash; Seattle</div>
+      <div class="widget"><div class="big">4</div>New RSS Updates</div>
+      <div class="widget"><div class="big">1,204</div>Members Online</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Featured Downloads</h2>
+    <ul class="droplet-list">
+      <li><a href="#">Aero Glass Rainmeter Skin v3</a> &mdash; transparent orbs &amp; dew drops</li>
+      <li><a href="#">Bubble Dock for XP/Vista</a> &mdash; glossy taskbar replacement</li>
+      <li><a href="#">Windows Media Player Aqua Visualizer Pack</a></li>
+      <li><a href="#">Widescreen Wallpaper: "Clouds Over Water" (1440x900)</a></li>
+    </ul>
+  </div>
+
+  <div class="panel">
+    <h2>Community Links</h2>
+    <span class="glass-badge">Powered by RSS</span>
+    <span class="glass-badge">Best Viewed in Firefox 2.0</span>
+    <span class="glass-badge">Web 2.0 Certified</span>
+    <span class="glass-badge">Valid XHTML</span>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2008 AquaLife.net &mdash; a Web 2.0 experience. All rights reserved.
+</footer>
+
+</body>
+</html>
